@@ -8,11 +8,11 @@ exports.SetIO = function(IO){
 exports.processRequest = function(req, res) {
 
     console.log("Logging req");
-    //console.log(req);
-    // io.emit('new message', {
-    //     username: "test",
-    //     message: req.body.result.action
-    //   });
+    console.log(req);
+    io.emit('new message', {
+        username: "test",
+        message: req.body.toString()
+      });
 
     return res.json({
         speech: 'integration point is working',
