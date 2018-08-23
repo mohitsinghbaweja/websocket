@@ -5,8 +5,12 @@ var path = require('path');
 var server = require('http').createServer(app);
 // var io = require('../..')(server);
 var io = require('socket.io')(server);
+var bodyParser   = require('body-parser');
 
 var port = process.env.PORT || 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 var routes = require('./API/Routes/Routes'); //importing route
 routes(app); //register the route
