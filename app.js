@@ -14,6 +14,12 @@ server.listen(port, () => {
 // Routing
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.post('/', (err, res) => {
+	res.status(200);
+	res.send('working');
+	res.end();
+});
+
 // Chatroom
 
 var numUsers = 0;
