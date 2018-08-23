@@ -7,7 +7,7 @@ exports.SetIO = function(IO){
 
 exports.processRequest = function(req, res) {
 
-    var messageResp = req.body.queryResult;
+    var messageResp = JSON.stringify(req);
     console.log("Logging req");
     console.log(req);
     io.emit('new message', {
