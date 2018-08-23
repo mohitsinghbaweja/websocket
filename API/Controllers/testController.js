@@ -13,7 +13,7 @@ exports.processRequest = function(req, res) {
     console.log(req);
     io.emit('new message', {
         username: "test",
-        message: req.body.result.action
+        message: req.body.result.action.toString()
       });
 
 
