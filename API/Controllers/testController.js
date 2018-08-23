@@ -7,11 +7,12 @@ exports.SetIO = function(IO){
 
 exports.processRequest = function(req, res) {
 
+    var messageResp = req.toString();
     console.log("Logging req");
     console.log(req);
     io.emit('new message', {
         username: "test",
-        message: req.body.toString()
+        message: messageResp
       });
 
     return res.json({
