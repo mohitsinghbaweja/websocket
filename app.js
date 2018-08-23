@@ -7,9 +7,17 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var port = process.env.PORT || 3000;
 
+var routes = require('./API/Routes/Routes'); //importing route
+routes(app); //register the route
+
 server.listen(port, () => {
   console.log('Server listening at port %d', port);
 });
+
+
+
+
+
 
 // Routing
 app.use(express.static(path.join(__dirname, 'public')));
