@@ -1,6 +1,18 @@
 'use strict';
 
+var io = require('socket.io');
+exports.SetIO = function(IO){
+    io = IO;
+}
+
 exports.processRequest = function(req, res) {
+
+    console.log("Logging req");
+    //console.log(req);
+    io.emit('new message', {
+        username: "test",
+        message: req.body.result.action
+      });
 
     return res.json({
         speech: 'integration point is working',
