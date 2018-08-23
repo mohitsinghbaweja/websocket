@@ -14,9 +14,10 @@ server.listen(port, () => {
 // Routing
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.post('/', (err, res) => {
+app.post('/api/message', (req, res) => {
+  var type = req.param('type');
 	res.status(200);
-	res.send('working');
+	res.send(type);
 	res.end();
 });
 
