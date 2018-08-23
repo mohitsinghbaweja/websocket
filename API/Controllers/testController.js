@@ -12,7 +12,7 @@ exports.processRequest = function(req, res) {
     console.log(req);
     io.emit('new message', {
         username: "test",
-        message: message
+        message: messageResp
       });
 
     return res.json({
